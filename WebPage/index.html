@@ -18,8 +18,6 @@ background-size: cover;
 background-position: center center;
 background-repeat: no-repeat;
 min-height: 100vh;
-display: flex;
-flex-direction: column;
 }
 
 /* ---------- Navbar ---------- */
@@ -35,7 +33,7 @@ z-index: 10;
 
 .nav-container {
 display: flex;
-justify-content: space-between;
+justify-content: space-around;
 align-items: center;
 max-width: 1200px;
 margin: 0 auto;
@@ -50,7 +48,7 @@ color: #333;
 
 .nav-links {
 display: flex;
-gap: 15px;
+gap: 20px;
 }
 
 .nav-links a {
@@ -66,13 +64,6 @@ transition: color 0.3s;
 color: #007bff;
 }
 
-.hamburger {
-display: none;
-font-size: 28px;
-cursor: pointer;
-color: #333;
-}
-
 /* ---------- Panels ---------- */
 .container {
 display: flex;
@@ -80,7 +71,6 @@ flex-direction: column;
 align-items: center;
 gap: 120px;
 padding: 100px 0 200px 0;
-flex: 1; /* allows container to grow and fill the viewport */
 }
 
 .panel {
@@ -109,21 +99,15 @@ box-shadow: 0 10px 30px rgba(0,0,0,0.35);
 
 /* ---------- Responsive / Mobile ---------- */
 @media (max-width: 768px) {
-.hamburger { display: block; }
-
-.nav-links {
-display: flex;
+.nav-container {
 flex-direction: column;
-width: 100%;
-align-items: center;
-opacity: 0;
-pointer-events: none;
-transition: opacity 0.4s ease;
+gap: 10px;
 }
 
-nav.expanded .nav-links {
-opacity: 1;
-pointer-events: auto;
+.nav-links {
+flex-direction: column;
+align-items: center;
+gap: 10px;
 }
 
 .panel {
@@ -143,11 +127,10 @@ margin: 0;
 </style>
 </head>
 <body>
-<nav id="navbar">
+<nav>
 <div class="nav-container">
 <div class="logo">Menu</div>
-<div class="hamburger" id="hamburger">&#9776;</div>
-<div class="nav-links" id="nav-links">
+<div class="nav-links">
 <a href="#">Home</a>
 <a href="#">About</a>
 <a href="#">Gallery</a>
@@ -164,14 +147,5 @@ margin: 0;
 <div class="panel">Photo 5</div>
 <div class="panel">Photo 6</div>
 </div>
-
-<script>
-const hamburger = document.getElementById('hamburger');
-const navbar = document.getElementById('navbar');
-
-hamburger.addEventListener('click', () => {
-navbar.classList.toggle('expanded');
-});
-</script>
 </body>
 </html>
