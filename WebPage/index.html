@@ -5,19 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Menu</title>
 <style>
-/* ---------- Body ---------- */
-body {
-background-image: url('images/bg.jpg'); /* Make sure bg.jpg is inside images folder */
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
+/* ---------- Reset & Body ---------- */
+html, body {
+height: 100%;
 margin: 0;
 font-family: Arial, sans-serif;
 }
 
+body {
+background-image: url('images/bg.jpg'); /* Make sure bg.jpg is inside images folder */
+background-size: cover;
+background-position: center center;
+background-repeat: no-repeat;
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+}
+
 /* ---------- Navbar ---------- */
 nav {
-background-color: rgba(255, 255, 255, 1);
+background-color: rgba(255, 255, 255, 0.95);
 backdrop-filter: blur(5px);
 padding: 10px 0;
 position: sticky;
@@ -73,6 +80,7 @@ flex-direction: column;
 align-items: center;
 gap: 120px;
 padding: 100px 0 200px 0;
+flex: 1; /* allows container to grow and fill the viewport */
 }
 
 .panel {
