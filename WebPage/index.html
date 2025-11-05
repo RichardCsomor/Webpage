@@ -87,6 +87,7 @@ font-size: 24px;
 color: #333;
 font-weight: bold;
 transition: transform 0.3s, box-shadow 0.3s;
+cursor: pointer;
 }
 
 .panel:nth-child(odd) { align-self: flex-start; margin-left: 10%; }
@@ -132,7 +133,6 @@ margin: 0;
 <div class="logo">Menu</div>
 <div class="nav-links">
 <a href="#">Home</a>
-<a href="#">About</a>
 <a href="#">Gallery</a>
 <a href="#">Contact</a>
 </div>
@@ -147,5 +147,21 @@ margin: 0;
 <div class="panel">Photo 5</div>
 <div class="panel">Photo 6</div>
 </div>
+
+<script>
+// Confirm script is running
+console.log("Script loaded successfully!");
+
+// Optional: simple panel click animation
+const panels = document.querySelectorAll('.panel');
+panels.forEach(panel => {
+panel.addEventListener('click', () => {
+panel.style.transform = 'scale(1.05)';
+setTimeout(() => {
+panel.style.transform = 'scale(1)';
+}, 300);
+});
+});
+</script>
 </body>
 </html>
